@@ -1,0 +1,2 @@
+class AuthorSessionsController < ApplicationController
+end
