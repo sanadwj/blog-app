@@ -11,6 +11,8 @@ class AuthorSessionsController < ApplicationController
     end
   end
 
+  before_action :require_login, only: [:destroy]
+
   def destroy
     logout
     redirect_to(:authors, notice: 'Logged out!')

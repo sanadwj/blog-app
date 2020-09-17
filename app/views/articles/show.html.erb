@@ -1,5 +1,6 @@
 <h1><%= @article.try(:title) %></h1>
-<p>
+<% if logged_in? %>
+  <p>
   Tags:
   <% @article.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
@@ -16,5 +17,7 @@
 <%= link_to "edit", edit_article_path(@article) %>
 <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}
 %>
+<% end %>
+
 
 
